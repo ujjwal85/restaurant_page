@@ -1,0 +1,255 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --background-pizza: 90%;
+    --background-top: 0;
+    --first-color: #F2B138;
+    --first-light-color: #F2BC57;
+    --second-color: #D56A56;
+    --dark-color: #403934;
+    --light-color: #F2F2F2;
+    --hover: #ec5914;
+}
+
+::-webkit-scrollbar{
+    display: none;
+  }
+  
+
+html{
+    font-family: 'Twinkle Star';
+}
+
+.content{
+    min-height:100vh;
+    background-color: var(--light-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.footer{
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--light-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    border-top: 2px solid var(--first-color);
+}
+
+.header{
+    width: 100%;
+    padding: 1.5rem;
+    padding-left: 150px;
+    padding-right: 150px;
+    background: rgba(0,0,0,.7) url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode:darken;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+.title{
+    color: var(--first-color);
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    gap: 1rem;
+}
+.fa-pizza-slice{
+    color: var(--second-color);
+    font-size: 1.5em;
+}
+
+.nav{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button{
+    color: var(--first-light-color);
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    font-size: 1.1em;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+button:hover{
+    background-color: var(--hover);
+    color: var(--light-color);
+}
+
+button:focus {
+  box-shadow: inset 0 0 0 2em var(--second-color);
+  color: var(--light-color);
+}
+
+.active{
+    background-color: var(--first-color);
+    color: var(--light-color);
+}
+
+.main{
+    flex-grow: 4;
+    background-color: var(--light-color);
+    display: flex;
+    justify-content: center;
+    font-family: 'Comfortaa';
+}
+
+.main div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background: url('../images/back.jpg');
+}
+
+.home{
+    padding: 1rem;
+    padding-left: 150px;
+    padding-right: 150px;
+    color: var(--dark-color) ;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.home img{
+    flex-basis: 50%;
+    width: 15%;
+
+}
+.titleHome{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+.titleHome h2{
+    padding: 50px;
+    text-align: center;
+}
+
+.menuGrid{
+    padding-left: 150px;
+    padding-right: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
+    gap: 1rem;
+}
+.pizza{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 20rem;
+    min-width: 30%;
+    height: 190px;
+    position: relative;
+    transition: 0.25s;
+    border-radius: 5px;
+    transition: top 2s;
+}
+
+.menuGrid h3{
+    z-index: 11;
+    color: var(--light-color);
+}
+.menuGrid img{
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+.pizza::before{
+    transition: .2s;
+    border-radius: 5px;
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: var(--background-pizza);
+    top: var(--background-top);
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(64,53,57,.8)
+}
+
+.pizza:hover{
+    --background-pizza: 30%;
+    --background-top: 70%;
+}
+
+.pizza:hover h3{
+    transition: .2s;
+    padding: 1.2rem;
+    align-self: flex-end;
+}
+
+.about{
+    padding: 20px;
+    padding-left: 150px;
+    padding-right: 150px;
+    
+    color: var(--dark-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.about h3{
+    font-size: 3em;
+    color: #fff;
+}
+.about p {
+    padding: 3rem;
+    font-size: 3.2rem;
+    color: #FFF;
+}
+
+@media (max-width: 1020px){
+    .menuGrid{
+        margin: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .home{
+        font-size: 1.5rem;
+        padding-left: 50px;
+        padding-right: 50px;
+        flex-direction: column;
+    }
+    /* .footer{
+        margin: 20px;
+    } */
+    .header{
+        flex-direction: column;
+    }
+    .about{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
